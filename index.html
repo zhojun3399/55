@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style type="text/css">
+.span{ margin:100px auto; display:block; width:100px; height:40px; background:pink; line-height:40px; text-align:center; cursor:pointer; color:#fff; font-size:20px;}
+
+h1{ display:none; width:300px; height:100px; background:#FFF; border:1px solid #333; padding:5px; box-shadow:1px 1px 1px #999; position:absolute; left:50%; top:50%; margin-left:-50px; font-size:16px; color:#333; display: block;}
+
+</style>
+</head>
+<script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	
+	$(".span").click(function(e) {
+		$("h1").show(); // 点击显示 h1 框
+
+		var Names = [   // 创建一个数组
+			'1--这是一个很不错的浏览器哦',
+			'2--把这个介绍给你的朋友吧，大家一起来玩',
+			'3--哈哈哈。。。 终于找到一款超级棒的浏览器了， 你看还可以这样玩....'
+		];
+		// alert( Names.length )	// 获取数组长度
+		Names.push('4--朋友说真的很好用...')	// 追加数据
+		// alert( Names )
+		// alert( Math.random() * Names.length ) // 取到的有小数点，需要取整数
+		// alert( parseInt( Math.random() * Names.length ) ) // 取到整数
+		var RanNum =  parseInt( Math.random() * Names.length ) // 取到整数
+		$("h1").html( Names[RanNum] )
+		
+
+		
+		
+        
+		//var names = ["刘备","曹操","孙权","关羽","吕布","张飞","貂蝉"]
+		//var ranNum = parseInt(Math.random()* names.length)
+		//alert(names[ranNum])
+		
+		//document.write("<h1 style='text-align:center;margin-top:100px;'>"+names[ranNum]+"</h1>")
+		
+		
+		//alert(ranNum)
+    });
+
+    $("#btn").click(function(){
+    	alert( $("h1").html() ); // 点击获取文本内容
+    })
+
+	
+});
+</script>
+
+
+<body>
+	<div>
+    	<span class="span">确认</span>
+        <h1>5--大家好，点击可以更改文本</h1>
+        <button id="btn">获取文本内容</button>
+		
+    </div>
+
+
+</body>
+</html>
